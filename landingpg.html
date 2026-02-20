@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Real Estate Landing Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(to bottom, #ffe57f, #ffd180); /* dark yellow to light orange */
+      color: #333;
+    }
+
+    header {
+      background-color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+
+    .language-menu {
+      position: relative;
+    }
+
+    .language-toggle {
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .language-dropdown {
+      position: absolute;
+      top: 30px;
+      right: 0;
+      background-color: white;
+      border: 1px solid #ccc;
+      display: none;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      z-index: 1000;
+    }
+
+    .language-dropdown li {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .language-dropdown li:hover {
+      background-color: #f0f0f0;
+    }
+
+    .hero {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+    }
+
+    footer {
+      background: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo" id="text-logo">Dream Homes</div>
+    <div class="language-menu">
+      <button class="language-toggle">🌐 <span id="current-lang">English</span></button>
+      <ul class="language-dropdown" id="language-dropdown">
+        <li data-lang="en">English</li>
+        <li data-lang="hi">हिन्दी</li>
+        <li data-lang="mr">मराठी</li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1 id="hero-title">Find Your Perfect Home</h1>
+    <p id="hero-desc">Browse top listings in your area and make your dream home a reality.</p>
+  </section>
+
+  <footer>
+    <p id="footer-text">© 2025 Dream Homes. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        logo: "Dream Homes",
+        title: "Find Your Perfect Home",
+        desc: "Browse top listings in your area and make your dream home a reality.",
+        footer: "© 2025 Dream Homes. All rights reserved.",
+        langLabel: "English"
+      },
+      hi: {
+        logo: "ड्रीम होम्स",
+        title: "अपना परफेक्ट घर खोजें",
+        desc: "अपने क्षेत्र में शीर्ष सूचियों को ब्राउज़ करें और अपने सपनों का घर बनाएं।",
+        footer: "© 2025 ड्रीम होम्स। सर्वाधिकार सुरक्षित।",
+        langLabel: "हिन्दी"
+      },
+      mr: {
+        logo: "ड्रीम होम्स",
+        title: "तुमचं परिपूर्ण घर शोधा",
+        desc: "तुमच्या परिसरातील उत्तम घरे पहा आणि स्वप्नातील घर प्रत्यक्षात आणा.",
+        footer: "© 2025 ड्रीम होम्स. सर्व हक्क राखीव.",
+        langLabel: "मराठी"
+      }
+    };
+
+    const dropdown = document.getElementById("language-dropdown");
+    const toggleBtn = document.querySelector(".language-toggle");
+    const langLabel = document.getElementById("current-lang");
+
+    toggleBtn.addEventListener("click", () => {
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    });
+
+    document.querySelectorAll("#language-dropdown li").forEach(item => {
+      item.addEventListener("click", () => {
+        const selectedLang = item.getAttribute("data-lang");
+        const t = translations[selectedLang];
+
+        document.getElementById("text-logo").textContent = t.logo;
+        document.getElementById("hero-title").textContent = t.title;
+        document.getElementById("hero-desc").textContent = t.desc;
+        document.getElementById("footer-text").textContent = t.footer;
+        langLabel.textContent = t.langLabel;
+
+        dropdown.style.display = "none";
+      });
+    });
+
+    // Close dropdown on outside click
+    window.addEventListener("click", function (e) {
+      if (!e.target.matches('.language-toggle') && !e.target.closest(".language-menu")) {
+        dropdown.style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>

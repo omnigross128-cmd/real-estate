@@ -1,0 +1,4 @@
+﻿Field	Type	Null	Key	Default	Extra
+id	int(11)	NO	PRI	NULL	auto_increment
+property_id	int(11)	NO		NULL	
+image_name	varchar(250)	NO		NULL	
