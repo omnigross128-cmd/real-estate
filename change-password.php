@@ -2,7 +2,11 @@
 include 'config.php';
 session_start();
 
-$user_id = $_SESSION['user_id'];  // make sure you stored user id in session
+if (!isset($_SESSION['user_id'])) {
+    die("Please login first");
+}
+
+$user_id = $_SESSION['user_id'];
 
 if (isset($_POST['change_btn'])) {
 
@@ -13,16 +17,13 @@ if (isset($_POST['change_btn'])) {
         die("Passwords do not match");
     }
 
-    // Hash password
     $hashed = password_hash($new, PASSWORD_DEFAULT);
 
-    // CORRECT TABLE NAME → register
     $sql = "UPDATE register SET password=? WHERE id=?";
-
     $stmt = $conn->prepare($sql);
 
     if (!$stmt) {
-        die("SQL ERROR: " . $conn->error);   // shows exact error if any
+        die("SQL ERROR: " . $conn->error);
     }
 
     $stmt->bind_param("si", $hashed, $user_id);
@@ -34,3 +35,23 @@ if (isset($_POST['change_btn'])) {
     }
 }
 ?>
+
+<script>
+const form = document.getElementById("changePassForm");
+
+form.addEventListener("submit", function(e){
+ e.preventDefault();
+
+ const msg = document.getElementById("passMsg");
+
+ fetch("change-password.php",{
+   method:"POST",
+   body:new FormData(form)
+ })
+ .then(res => res.text())
+ .then(data => {
+   msg.innerHTML = data;   // ⭐ show message
+   msg.style.display="block";
+ });
+});
+</script>
