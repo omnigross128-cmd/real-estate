@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 session_start();
 include ("config.php");
 
@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST['email']);
     $password = $_POST['password'];
 
-    // ✅ get user by email ONLY
+    // âœ… get user by email ONLY
     $sql = "SELECT id, email, password, firstname, lastname, mobile
             FROM register 
             WHERE email = ?";
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $user = $result->fetch_assoc();
 
-        // ✅ verify hashed password (fallback for legacy plaintext)
+        // âœ… verify hashed password (fallback for legacy plaintext)
         $loginOk = false;
         if (password_verify($password, $user['password'])) {
             $loginOk = true;
@@ -381,7 +381,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="ltn__utilize-menu-inner ltn__scrollbar">
             <div class="ltn__utilize-menu-head">
                 <span class="ltn__utilize-menu-title">Cart</span>
-                <button class="ltn__utilize-close">×</button>
+                <button class="ltn__utilize-close">Ã—</button>
             </div>
             <div class="mini-cart-product-area ltn__scrollbar">
                 <div class="mini-cart-item clearfix">
@@ -447,7 +447,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="site-logo">
                     <a href="index.php"><img src="img/cres-logo.png" alt="Logo"></a>
                 </div>
-                <button class="ltn__utilize-close">×</button>
+                <button class="ltn__utilize-close">Ã—</button>
             </div>
             <div class="ltn__utilize-menu-search-form">
                 <form action="#">
@@ -625,7 +625,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <button class="theme-btn-1 btn btn-block" type="submit">SIGN IN</button>
                             </div>
                             <div class="go-to-btn mt-20">
-                                <a href="change-password.php" target="_blank"><small>FORGOTTEN YOUR PASSWORD?</small></a>
+                                <a href="forgot-password.php"><small>FORGOTTEN YOUR PASSWORD?</small></a>
                             </div>
                         </form>
                     </div>
@@ -825,3 +825,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
 </body>
 </html>
+
