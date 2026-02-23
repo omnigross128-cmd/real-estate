@@ -24,8 +24,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $user = $result->fetch_assoc();
 
-        // ✅ verify hashed password
+        // ✅ verify hashed password (fallback for legacy plaintext)
+        $loginOk = false;
         if (password_verify($password, $user['password'])) {
+            $loginOk = true;
+        } elseif (hash_equals((string)$user['password'], (string)$password)) {
+            // Legacy plaintext password found: upgrade to hash
+            $newHash = password_hash($password, PASSWORD_DEFAULT);
+            $update = $conn->prepare("UPDATE register SET password = ? WHERE id = ?");
+            $update->bind_param("si", $newHash, $user['id']);
+            $update->execute();
+            $update->close();
+            $loginOk = true;
+        }
+
+        if ($loginOk) {
 
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['firstname'] = $user['firstname'];
@@ -812,4 +825,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
 </body>
 </html>
-

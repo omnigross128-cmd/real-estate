@@ -1848,8 +1848,8 @@ $encodedOgImage = str_replace(' ', '%20', $ogImage);
     </div>
     <!-- CALL TO ACTION END -->
 
-    <!-- FOOTER AREA START -->
-   <footer class="ltn__footer-area  ">
+   <!-- FOOTER AREA START -->
+    <footer class="ltn__footer-area  ">
         <div class="footer-top-area  section-bg-2 plr--5">
             <div class="container-fluid">
                 <div class="row">
@@ -1870,7 +1870,7 @@ $encodedOgImage = str_replace(' ', '%20', $ogImage);
                                     <div class="footer-address-info">
                                         <p>
                                             <a href="https://www.google.com/maps?q=Chamber+No+1,+2nd+Floor+Mariaai+Complex,+Powai+Naka,+Raviwar+Peth,+Satara,+Maharashtra+415001">
-                                                Chamber No 1, 2nd Floor Mariaai Complex, Powai Naka, Raviwar Peth, Satara, Maharashtra 415001
+                                                Chamber No 1, 2nd Floor Mariaai Complex,Raviwar Peth, Satara
                                             </a>
                                         </p>
                                        
@@ -1883,6 +1883,18 @@ $encodedOgImage = str_replace(' ', '%20', $ogImage);
                                         </div>
                                         <div class="footer-address-info">
                                             <p><a href="tel:+91 92846 01662">+91 92846 01662</a></p>
+                                        </div>
+                                        <div class="footer-address-icon">
+                                            <i class="icon-call"></i>
+                                        </div>
+                                        <div class="footer-address-info">
+                                            <p><a href="tel:+91 9420712879">+91 9420712879</a></p>
+                                        </div>
+                                        <div class="footer-address-icon">
+                                            <i class="icon-call"></i>
+                                        </div>
+                                        <div class="footer-address-info">
+                                            <p><a href="tel:+91 9420713159">+91 9420713159</a></p>
                                         </div>
                                     </li>
                                     <li>
@@ -1901,7 +1913,7 @@ $encodedOgImage = str_replace(' ', '%20', $ogImage);
                                     <li><a href="https://www.instagram.com/capitalrealestatesatara/" title="Instagram"><i class="fab fa-instagram"></i></a></li>
                                   <li><a href="https://wa.me/+919284601662" title="Whatsapp"><i class="fa-brands fa-whatsapp"></i></a></li>
                                     <!-- <li><a href="#" title="Linkedin"><i class="fab fa-linkedin"></i></a></li> -->
-                                    <li><a href="https://wa.me/+919284601662" title="Whatsapp"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -1946,7 +1958,7 @@ $encodedOgImage = str_replace(' ', '%20', $ogImage);
                                     <li><a href="account.php">My account</a></li>
                                     <!-- <li><a href="wishlist.php">Wish List</a></li> -->
                                     <!-- <li><a href="order-tracking.php">Order tracking</a></li> -->
-                                     
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -1975,7 +1987,7 @@ $encodedOgImage = str_replace(' ', '%20', $ogImage);
                 <div class="row">
                     <div class="col-md-6 col-12">
                         <div class="ltn__copyright-design clearfix">
-                            <p>All Rights Reserved @ Company <span class="current-year"></span></p>
+                            <p>All Rights Reserved @ Company <span class="current-year"></span> | Design and Developed by  <a href="https://omnigross.in" target="_blank" class="dev-link">OmniGross</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-12 align-self-center">

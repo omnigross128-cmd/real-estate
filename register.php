@@ -17,9 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
+    // Hash password for secure storage (matches login.php password_verify)
+    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
     // Create SQL query
     $sql = "INSERT INTO register (role, firstname, lastname, mobile, email, password)
-            VALUES ('$role', '$firstname', '$lastname', '$mobile', '$email', '$password')";
+            VALUES ('$role', '$firstname', '$lastname', '$mobile', '$email', '$passwordHash')";
 
     // Execute query
     if (mysqli_query($conn, $sql)) {
@@ -804,4 +807,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
 </body>
 </html>
-

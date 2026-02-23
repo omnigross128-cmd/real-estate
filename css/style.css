@@ -15284,3 +15284,14 @@ input.cart-plus-minus-box {
     margin-bottom: 15px;
 }
 
+.dev-link{
+  color:#c5a47e;          /* luxury gold tone */
+  text-decoration:none;
+  font-weight:500;
+  transition:all .3s ease;
+}
+
+.dev-link:hover{
+  color:#fff;
+  text-decoration:underline;
+}

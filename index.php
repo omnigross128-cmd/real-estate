@@ -52,6 +52,8 @@ include 'config.php';
                             <ul>
                                 <li><a href="mailto:capitalsatara@gmail.com?Subject=Flower%20greetings%20to%20you"><i class="icon-mail"></i> capitalsatara@gmail.com</a></li>
                                 <li><a href="tel:+91 92846 01662"><i class="icon-call"></i>+91 92846 01662</a></li>
+                                
+                                
                             </ul>
                         </div>
                     </div>
@@ -1285,7 +1287,7 @@ $waMessage = "Hello, I am interested in this property:\n\n"
                                     <div class="footer-address-info">
                                         <p>
                                             <a href="https://www.google.com/maps?q=Chamber+No+1,+2nd+Floor+Mariaai+Complex,+Powai+Naka,+Raviwar+Peth,+Satara,+Maharashtra+415001">
-                                                Chamber No 1, 2nd Floor Mariaai Complex, Powai Naka, Raviwar Peth, Satara, Maharashtra 415001
+                                                Chamber No 1, 2nd Floor Mariaai Complex,Raviwar Peth, Satara
                                             </a>
                                         </p>
                                        
@@ -1298,6 +1300,18 @@ $waMessage = "Hello, I am interested in this property:\n\n"
                                         </div>
                                         <div class="footer-address-info">
                                             <p><a href="tel:+91 92846 01662">+91 92846 01662</a></p>
+                                        </div>
+                                        <div class="footer-address-icon">
+                                            <i class="icon-call"></i>
+                                        </div>
+                                        <div class="footer-address-info">
+                                            <p><a href="tel:+91 9420712879">+91 9420712879</a></p>
+                                        </div>
+                                        <div class="footer-address-icon">
+                                            <i class="icon-call"></i>
+                                        </div>
+                                        <div class="footer-address-info">
+                                            <p><a href="tel:+91 9420713159">+91 9420713159</a></p>
                                         </div>
                                     </li>
                                     <li>
@@ -1362,7 +1376,6 @@ $waMessage = "Hello, I am interested in this property:\n\n"
                                     <!-- <li><a href="wishlist.php">Wish List</a></li> -->
                                     <!-- <li><a href="order-tracking.php">Order tracking</a></li> -->
                                     
-                                    
                                 </ul>
                             </div>
                         </div>
@@ -1391,7 +1404,7 @@ $waMessage = "Hello, I am interested in this property:\n\n"
                 <div class="row">
                     <div class="col-md-6 col-12">
                         <div class="ltn__copyright-design clearfix">
-                            <p>All Rights Reserved @ Company <span class="current-year"></span></p>
+                            <p>All Rights Reserved @ Company <span class="current-year"></span> | Design and Developed by  <a href="https://omnigross.in" target="_blank" class="dev-link">OmniGross</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-12 align-self-center">
@@ -1643,4 +1656,3 @@ $waMessage = "Hello, I am interested in this property:\n\n"
 
 </body>
 </html>
-
